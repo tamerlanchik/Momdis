@@ -1,0 +1,65 @@
+
+1.
+
+������ � ����:
+ 
+% ������ �������� ����������
+Uku_Set_A_2J
+save data_uku_A Data1 Data2 Data0
+
+
+Uku_Set_n_3J
+% ������������ ��������������� ���-���������� (�� ������ �������������� ����������)
+save data_uku_n Data0 Data1 Data2 Data3;
+
+
+������� �������� ���������� �����
+data_uku
+data_uku_A
+���� (1) ����� data_uku_A
+ 
+����1 ����� �������� ����
+
+2. ��� ������� ������� �� ���������� 3J?
+
+3. ���� ������������ ��� � ��������������� ��� �������� � 
+���- ��� ���
+���� - ������� ����������
+
+4. ��������� ������� ������������ �������
+
+5. Uku_Set_k_3J
+% ���������� ������������� ��� (������ ������������ ���-����������)
+
+�� ��������
+
+
+6. Nash_Set_C_3J(n);
+% ������� �������� ���������� (��������� ��� �� ������� ������ ����������)
+�� ��������
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
+"end" expected, "End of Input" found.
+
+
+7. ����� �� �������� ������ ��� ��� 3-� J
+Pareto_3J(n)
+�� ��������
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
+"end" expected, "End of Input" found.
+
+8. ������� ������ �� ��������
+function Pareto_3J(n);
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
+"end" expected, "End of Input" found.
+
+9. �� ���� ����������, �������� �� ���, �.�. �� �������� ������
+
+10. ����� �� ��������
+
+11. � mat_opt ����  load data_x0;
+� mat_mod - load data_flag_nd;
+� mat_int load data_flag_nd; � load data_x0;
+ � ���������� ������ �������
+
+12. ����������� ������� ���������� r_q=[1,1,1]?
+

@@ -1,0 +1,240 @@
+function vyvodObPo
+
+'вывод рассчета области показателей'
+
+load data_num_coalic;
+
+if num_coalic==2;
+% 2 коалиции
+
+load data_field;
+[n,m,k]=size(DataM.J);
+z=1;
+for i=1:n
+     for l=1:m
+  NN(z,1)=DataM.J(i,l,1);
+  NN(z,2)=DataM.J(i,l,2);
+  NN(z,3)=DataM.Q(i,l,1);
+  NN(z,4)=DataM.Q(i,l,2);
+
+  nS=1;
+  p=num2str(z);
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+    
+  e(z,nS:nS+6)=')  Q: (';
+  nS=nS+7;
+  
+%  p=num2str(i);
+%  [r,d]=size(p);
+%  e(z,nS:(nS+d-1))=p; 
+%  nS=nS+d;
+
+%  e(z,nS:nS)=','; 
+%  nS=nS+1;
+
+%  p=num2str(l);
+%  [r,d]=size(p);
+%  e(z,nS:(nS+d-1))=p; 
+%  nS=nS+d;
+
+%  e(z,nS:(nS+2))=')=('; 
+%  nS=nS+3;
+
+  p=num2str(NN(z,3));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,4));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:(nS+10))=')  ->  J: (';
+  nS=nS+11;
+
+  %p=num2str(i);
+  %[r,d]=size(p);
+  %e(z,nS:(nS+d-1))=p; 
+  %nS=nS+d;
+
+  %e(z,nS:nS)=','; 
+  %nS=nS+1;
+
+  %p=num2str(l);
+  %[r,d]=size(p);
+  %e(z,nS:(nS+d-1))=p; 
+  %nS=nS+d;
+
+  %e(z,nS:(nS+2))=')=('; 
+  %nS=nS+3;
+
+  p=num2str(NN(z,1));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,2));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=')'; 
+  nS=nS+1;
+
+  
+  z=z+1;
+  end
+end
+
+%e=num2str(NN(:,:));
+fff=findobj(vyvodRezult, 'Tag', 'PoleVyvoda');
+set(fff , 'String', e);
+end;
+
+if num_coalic==3;
+% 3 коалиции
+
+load data_field;
+[n,m,n1,k]=size(DataM.J);
+z=1;
+for i=1:n
+     for l=1:m
+             for ii=1:n1
+  NN(z,1)=DataM.J(i,l,ii,1);
+  NN(z,2)=DataM.J(i,l,ii,2);
+  NN(z,3)=DataM.J(i,l,ii,3);
+  NN(z,4)=DataM.Q(i,l,ii,1);
+  NN(z,5)=DataM.Q(i,l,ii,2);
+  NN(z,6)=DataM.Q(i,l,ii,3);
+
+  
+  nS=1;
+  p=num2str(z);
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+    
+  e(z,nS:nS+6)=')  Q: (';
+  nS=nS+7;
+
+%  e(z,1:2)='J(';
+%  nS=3;
+  
+%  p=num2str(i);
+%  [r,d]=size(p);
+%  e(z,nS:(nS+d-1))=p; 
+%  nS=nS+d;
+
+%  e(z,nS:nS)=','; 
+%  nS=nS+1;
+
+%  p=num2str(l);
+%  [r,d]=size(p);
+%  e(z,nS:(nS+d-1))=p; 
+%  nS=nS+d;
+
+%  e(z,nS:nS)=','; 
+%  nS=nS+1;
+
+%  p=num2str(ii);
+%  [r,d]=size(p);
+%  e(z,nS:(nS+d-1))=p; 
+%  nS=nS+d;
+
+  
+%  e(z,nS:(nS+2))=')=('; 
+%  nS=nS+3;
+
+  p=num2str(NN(z,1));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,2));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,3));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+    
+  e(z,nS:(nS+8))=')  ->  J('; 
+  nS=nS+8;
+
+  p=num2str(i);
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(l);
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(ii);
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+  
+  e(z,nS:(nS+2))=')=('; 
+  nS=nS+3;
+
+  p=num2str(NN(z,4));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,5));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+
+  e(z,nS:nS)=','; 
+  nS=nS+1;
+
+  p=num2str(NN(z,6));
+  [r,d]=size(p);
+  e(z,nS:(nS+d-1))=p; 
+  nS=nS+d;
+  
+  e(z,nS:nS)=')'; 
+  nS=nS+1;
+
+  
+  z=z+1;
+     end
+  end
+end
+
+%e=num2str(NN(:,:));
+fff=findobj(vyvodRezult, 'Tag', 'PoleVyvoda');
+set(fff , 'String', e);
+end;
+end;
+

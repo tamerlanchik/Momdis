@@ -1,0 +1,4 @@
+function plotpareto;
+load('data_par_s.mat');
+[Jnew1, Ind]=sort(Data0.J(:,1);
+plot(Data0.J(:,1), Data0.Q(:,3), 'ro');

@@ -1,0 +1,38 @@
+function X_=mat_mod(dt,X,Q);
+global flag_nd;
+load data_flag_nd;
+beta=0.016;                
+P=4*10^6;                  
+r11=0.2;                   
+r12=0.2;                   
+r21=0.02;                  
+r22=0.02;                  
+s1=3000;                   
+s2=3000;                   
+mu=0.014;                  
+nu=0.1;                    
+c=42*10^6;                 
+a1=38.78*10^6;             
+a2=101.45*10^6;            
+X_(6)=-mu*X(6);                                                                                                          
+X_(7)=-beta*X(7);                                                                                                        
+X_(8)=-beta*X(8);                                                                                                        
+if Q(1)>X(5) Q(1)=X(5); end;                                                                                             
+if Q(2)>X(6) Q(2)=X(6); end;                                                                                             
+pt=(a1*log10(Q(1)+Q(2))-a2)/(Q(1)+Q(2));                                                                                 
+R1=(pt-nu*s1*12*exp(mu*dt))*Q(1);                                                                                        
+R2=(pt-nu*s2*12*exp(mu*dt))*Q(2);                                                                                        
+if R1<0 R1=0; end;                                                                                                       
+if R2<0 R2=0; end;                                                                                                       
+X_(1)=r21*X(1)+0.7*R1;                                                                                                   
+X_(2)=r22*X(2)+0.7*R2;                                                                                                   
+if X(3)>0                                                                                                                
+X_(3)=r11*X(3)-0.3*R1;                                                                                                   
+else X_(1)=X_(1)+abs(r11*X(3)-0.3*R1); end;                                                                              
+if X(4)>0                                                                                                                
+X_(4)=r12*X(4)-0.3*R2;                                                                                                   
+else X_(2)=X_(2)+abs(r12*X(4)-0.3*R2); end;                                                                              
+if X_(3)>X_(7) X_(3)=X_(7); end;                                                                                         
+if X_(4)>X_(8) X_(4)=X_(8); end;                                                                                         
+;                                                                                                                        
+if flag_nd==0; X_=X_'; end;
