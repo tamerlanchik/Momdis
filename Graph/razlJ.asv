@@ -1,0 +1,37 @@
+
+function saveJkoal;
+
+
+set(findobj(inpmodel, 'Tag', 'modQ1') , 'String', A(1,1:(mm-1)));
+
+load data_num_coalic;
+
+if num_coalic==2;
+set(findobj(graphics, 'Tag', 'GrUKUks') , 'Visible', 'Off');
+set(findobj(graphics, 'Tag', 'GrUKUksOff') , 'Visible', 'Off');
+set(findobj(graphics, 'Tag', 'GrUKUksOn') , 'Visible', 'Off');
+set(findobj(graphics, 'Tag', 'GrUKUksOn') , 'Visible', 'Off');
+
+
+
+end;
+
+if num_coalic==3;
+load data_uku_A;
+
+plot3(Data0.J(:,1),Data0.J(:,2),Data0.J(:,3),'r*');
+plot3(Data1.J(:,1),Data1.J(:,2),Data1.J(:,3),'r.');
+plot3(Data2.J(:,1),Data2.J(:,2),Data2.J(:,3),'ro');
+
+%plot3(Data0.J(:,:,1),Data1.J(:,:,1),Data2.J(:,:,1),'co');
+%plot(Data2.J(:,:,1),Data2.J(:,:,2),'co');
+
+end;
+
+
+
+
+
+
+
+

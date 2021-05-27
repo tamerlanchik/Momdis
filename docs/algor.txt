@@ -1,0 +1,120 @@
+- расчет области показателей не производится, проблема в ode23s
+
+- какое различие межде сетевыми нешами A,B,C
+делаю так:
+все запихиваю в сетевой неш
+
+- неш после УКУ, т.к. в сетевом неше (C) используектя дата файл УКУ
+
+- как выбирается n? поставил единицу
+function y=Nash_Set_C_2J(n);
+% Сильное активное равновесие (локальный Нэш на области слабых равновесий)
+load data_field; QS=size(DataM.Q);
+if n==1; load data_uku_A; end; % На области симметричных слабых равновесий
+if n==2; load data_uku; end; % На области УКУ-решений
+
+- Nash_Set_C_2J(1);
+записываю в сильные равновесные решения
+
+- что такое plot_X
+
+- ошибка в алгоритме Nash_T
+
+-очередь
+
+- Shepli_2J(n) как оперировать выбором?
+
+- 4 вида парето (Pareto_2J(n)), сейчас 1. какой он, сетевой?
+
+
+область показателей - 
+ничего
+save data_field DataM;
+
+Nash_Set_A_2J
+% Сетевой Нэш (сильное активное равновесие)
+load data_field;
+save data_nash_s Data0 Data1 Data2;
+
+Nash_Set_B_2J
+% Эпсилон-Нэш-равновесие (с точностью eps относительно сетевого Нэша в его окрестности)
+load data_field;
+load data_nash_s;
+save data_par_s Data0;
+
+
+function Shepli_2J(n);
+% Реализация процедуры поиска точки Шепли (только Шепли, без расчета оптимального решения).
+% Собственно решение УКУ-Шепли находится при помощи процедуры STEK_7 (точка СТЭК-7)
+load data_par_s Data0; Data_p=Data0;
+ParetoJ=Data_p.J;
+if n==1; load data_nash_t Data0; end; % Для точного Нэша
+if n==2; load data_stek1 Data0; end; % Для сетевого Нэша
+save data_shepli Data0;
+
+function STEK_1_2J;
+% Функция выбора эффективного Нэш-решения из множества Нэш-решений
+% (если точка сетевого Нэша одна, она и будет точкой СТЭК-1)
+load data_nash_s; Data=Data0;
+save data_stek1 Data0;
+
+function STEK_5_2J;
+load data_stek1; Data_n=Data0;
+load data_uku; Data_u=Data0;
+save data_stek5 Data0;
+
+function STEK_7_2J(n);
+% Нахождение оптимального решения
+load data_shepli Data0; Data_Sh=Data0;
+if n==1; load data_uku_A; end; % По области слабых равновесий
+if n==2; load data_uku; end; % По области УКУ-решений
+if n==3; load data_par; end; % По Парето-границе (в зависимости от варианта расчета в функции)
+save data_stek7 Data0;
+
+save data_nash_e Data0 Data1 Data2;
+
+y=Nash_Set_C_2J(n);
+% Сильное активное равновесие (локальный Нэш на области слабых равновесий)
+load data_field; QS=size(DataM.Q);
+if n==1; load data_uku_A; end; % На области симметричных слабых равновесий
+if n==2; load data_uku; end; % На области УКУ-решений
+save data_nash_a Data0 Data1 Data2;
+
+function y=Nash_T;
+% Формирование точного Нэш-решения; начальное приближение - точка СТЭК-1 (эффективное сетевое Нэш-решение)
+load data_stek1; q0=Data0.Q; % Необходимость проверки существования файла; необходимо сначала запустить процедуру STEK_1
+load data_x0 x0; global x0;
+save data_nash_t Data0;
+
+function STEK_7_2J(n);
+% Нахождение оптимального решения
+load data_shepli Data0; Data_Sh=Data0;
+if n==1; load data_uku_A; end; % По области слабых равновесий
+if n==2; load data_uku; end; % По области УКУ-решений
+if n==3; load data_par; end; % По Парето-границе (в зависимости от варианта расчета в функции)
+save data_stek7 Data0;
+
+function y=Uku_Set_2J;
+% Классическое УКУ-равновесие
+load data_field;
+save data_uku Data0 Data1 Data2;
+
+function Uku_Set_A_2J;
+% Слабое активное равновесие
+load data_field;
+save data_uku_A Data1 Data2 Data0
+
+function Pareto_2J(n);
+if n==0; % По области показателей
+load data_field; Q_=DataM.J; QS=size(Q_);
+if n==1; % По области показателей относительно улучшения от точки Нэша (по конусу СТЭК-1)
+load data_field; Q_=DataM.J; QS=size(Q_);
+load data_stek1; 
+if n==2; % По области УКУ-решений (СТЭК-5)
+load data_uku;
+ save data_par_s Data0;
+
+
+
+
+

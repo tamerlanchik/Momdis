@@ -1,0 +1,45 @@
+function y=Pareto_k_2J(Data0);
+
+ Qt=[Data0.Q,Data0.J]; QS(1)=size(Qt,1); QS(2)=size(Qt,1); QS(3)=size(Qt,2); j1=QS(3)-1; j2=QS(3);
+ [Qmin1_,n1]=min(Qt(:,j1)); Qmin1=Qt(n1,j1:j2);
+ [Qmin2_,n2]=min(Qt(:,j2)); Qmin2=Qt(n2,j1:j2);
+ Q_1=Qt; Q_P=zeros(1,QS(3));
+
+ Q_m=[(Qmin1(1)+Qmin2(1))/2,(Qmin1(2)+Qmin2(2))/2];
+ [Qmin,n1]=min(((Q_1(:,j1)-Q_m(1)).^2+(Q_1(:,j2)-Q_m(2)).^2).^0.5);
+ Qt=Q_1.*0; cc=0;
+ for i=1:size(Q_1,1);
+   if (Q_1(i,j1)<=Q_1(n1,j1));
+    if (Q_1(i,j2)<=Q_1(n1,j2));
+       cc=cc+1; for k=1:QS(3); Qt(cc,k)=Q_1(i,k); end;
+       Qt=[Qt; Q_1(i,:)];
+    end;
+   end;
+ end;
+ Q_2=Qt(1:cc,:);
+ [Qmax,n2]=max(((Q_2(:,j1)-Q_1(n1,j1)).^2+(Q_2(:,j2)-Q_1(n1,j2)).^2).^0.5);
+ Qt=Q_1.*0; cc=0;
+ for i=1:size(Q_1,1);
+   if (Q_1(i,j1)<=Q_2(n2,j1))|(Q_1(i,j2)<=Q_2(n2,j2));
+      cc=cc+1; for k=1:QS(3); Qt(cc,k)=Q_1(i,k); end;
+   end;
+ end;
+ Q_1=Qt(1:cc,:); i=0;
+
+ Q_P=zeros(QS(1)*QS(2),QS(3)); cc=0;
+ for i=1:size(Q_1,1);
+  fl=0; Qt=Q_1(i,:);
+    for j=1:size(Q_1,1);
+     if (Q_1(j,j1)<Qt(1,j1));
+      if (Q_1(j,j2)<Qt(1,j2));
+       fl=1; break;
+      end;
+     end;
+  end;
+  if fl==0;
+    cc=cc+1; for kk=1:QS(3); Q_P(cc,kk)=Qt(1,kk); end;
+  end;
+ end;
+ Q_P=Q_P(1:cc,:);
+ Data.Time=toc; Data.Q=Q_P(:,1:j1-1); Data.J=Q_P(:,j1:j2);
+ y=Data;

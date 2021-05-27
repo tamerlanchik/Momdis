@@ -1,0 +1,8 @@
+слабые равновесные решения		data_uku_A
+УКУ(сет.)					data_uku
+Неш(сет.)				data_nash_s
+СТЭК№					data_stek#
+Сильные равновесные решения		data_nash_a
+Парето сетевой				data_par_s
+Нешточный				data_nash_t
+Шепли					data_shepli
