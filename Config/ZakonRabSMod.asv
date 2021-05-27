@@ -1,14 +1,14 @@
 
 function ZakonRabSMod;
 warning off;
-%пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+%закончить работу с моделью
 
-set(findobj(mmenu, 'Tag', 'namemodelvmenu') , 'String', 'пїЅпїЅпїЅ');
+set(findobj(mmenu, 'Tag', 'namemodelvmenu') , 'String', 'НЕТ');
     set(findobj(mmenu, 'Tag', 'mmodelir') , 'Enable', 'off');
     set(findobj(mmenu, 'Tag', 'moptimiz') , 'Enable', 'off');
     set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'off');
 fail=fopen('startcong.txt','w');
-fprintf(fail, '%s/n', 'пїЅпїЅпїЅ');
+fprintf(fail, '%s\n', 'НЕТ');
 fclose(fail);
 
 delete data_field.mat

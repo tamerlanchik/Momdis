@@ -129,7 +129,7 @@ if flagm==1
     %метод выбран
       num=get(findobj(VyborMetOpt, 'Tag', 'metWepliF'),'Value');
       if num==0
-      vyborWepli;
+      VyborWepli;
       else
       end
   else

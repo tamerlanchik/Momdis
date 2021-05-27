@@ -1,1 +1,96 @@
-function y=mat_fun(X,Q,N);/nT_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);/nJ_norm=[1000,1000];/nbeta=0.016;                /nP=4*10^6;                  /nr11=0.2;                   /nr12=0.2;                   /nr21=0.02;                  /nr22=0.02;                  /ns1=3000;                   /ns2=3000;                   /nmu=0.014;                  /nnu=0.1;                    /nc=42*10^6;                 /na1=38.78*10^6;             /na2=101.45*10^6;            /n%J/nJ(1)=-1/2*X_T(1)+1/2*abs(X_T(3))                               /nJ(2)=-1/2*X_T(2)+1/2*abs(X_T(4))                               /n%KJ/nif N==0; y=J; else y=J(N); end;/nfunction X_=mat_mod(dt,X,Q);/nglobal flag_nd;/nload data_flag_nd;/n%C/nbeta=0.016;                /nP=4*10^6;                  /nr11=0.2;                   /nr12=0.2;                   /nr21=0.02;                  /nr22=0.02;                  /ns1=3000;                   /ns2=3000;                   /nmu=0.014;                  /nnu=0.1;                    /nc=42*10^6;                 /na1=38.78*10^6;             /na2=101.45*10^6;            /n%KC/n%X/nX_(6)=-mu*X(6);                                                                                                          /nX_(7)=-beta*X(7);                                                                                                        /nX_(8)=-beta*X(8);                                                                                                        /nif Q(1)>X(5) Q(1)=X(5); end;                                                                                             /nif Q(2)>X(6) Q(2)=X(6); end;                                                                                             /npt=(a1*log10(Q(1)+Q(2))-a2)/(Q(1)+Q(2));                                                                                 /nR1=(pt-nu*s1*12*exp(mu*dt))*Q(1);                                                                                        /nR2=(pt-nu*s2*12*exp(mu*dt))*Q(2);                                                                                        /nif R1<0 R1=0; end;                                                                                                       /nif R2<0 R2=0; end;                                                                                                       /nX_(1)=r21*X(1)+0.7*R1;                                                                                                   /nX_(2)=r22*X(2)+0.7*R2;                                                                                                   /nif X(3)>0                                                                                                                /nX_(3)=r11*X(3)-0.3*R1;                                                                                                   /nelse X_(1)=X_(1)+abs(r11*X(3)-0.3*R1); end;                                                                              /nif X(4)>0                                                                                                                /nX_(4)=r12*X(4)-0.3*R2;                                                                                                   /nelse X_(2)=X_(2)+abs(r12*X(4)-0.3*R2); end;                                                                              /nif X_(3)>X_(7) X_(3)=X_(7); end;                                                                                         /nif X_(4)>X_(8) X_(4)=X_(8); end;                                                                                         /n;                                                                                                                        /n%KX/nif flag_nd==0; X_=X_'; end;/nfunction [u_,v_]=mat_ogr(Q,X,n);/n%U/nu_=[];/nv_=[];/n%KU/nfunction KonFail/n%Q/nq_max=[1500,2500];/n%KQ/n%x0/nx0=[0,0,6*10^6,10*10^6,1500,2500,6*10^6,10*10^6];/n%Kx0/n%Q1/nq_min=[0,0];/n%KQ1/n
+function y=mat_fun(X,Q,N);
+T_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);
+J_norm=[1000,1000];
+beta=0.016;                
+P=4*10^6;                  
+r11=0.2;                   
+r12=0.2;                   
+r21=0.02;                  
+r22=0.02;                  
+s1=3000;                   
+s2=3000;                   
+mu=0.014;                  
+nu=0.1;                    
+c=42*10^6;                 
+a1=38.78*10^6;             
+a2=101.45*10^6;            
+%J
+J(1)=-1/2*X_T(1)+1/2*abs(X_T(3))                               
+J(2)=-1/2*X_T(2)+1/2*abs(X_T(4))                               
+%KJ
+if N==0; y=J; else y=J(N); end;
+function X_=mat_mod(dt,X,Q);
+global flag_nd;
+load data_flag_nd;
+%C
+beta=0.016;                
+P=4*10^6;                  
+r11=0.2;                   
+r12=0.2;                   
+r21=0.02;                  
+r22=0.02;                  
+s1=3000;                   
+s2=3000;                   
+mu=0.014;                  
+nu=0.1;                    
+c=42*10^6;                 
+a1=38.78*10^6;             
+a2=101.45*10^6;            
+%KC
+%X
+X_(6)=-mu*X(6);                                                                                                          
+X_(7)=-beta*X(7);                                                                                                        
+X_(8)=-beta*X(8);                                                                                                        
+if Q(1)>X(5) Q(1)=X(5); end;                                                                                             
+if Q(2)>X(6) Q(2)=X(6); end;                                                                                             
+pt=(a1*log10(Q(1)+Q(2))-a2)/(Q(1)+Q(2));                                                                                 
+R1=(pt-nu*s1*12*exp(mu*dt))*Q(1);                                                                                        
+R2=(pt-nu*s2*12*exp(mu*dt))*Q(2);                                                                                        
+if R1<0 R1=0; end;                                                                                                       
+if R2<0 R2=0; end;                                                                                                       
+X_(1)=r21*X(1)+0.7*R1;                                                                                                   
+X_(2)=r22*X(2)+0.7*R2;                                                                                                   
+if X(3)>0                                                                                                                
+X_(3)=r11*X(3)-0.3*R1;                                                                                                   
+else X_(1)=X_(1)+abs(r11*X(3)-0.3*R1); end;                                                                              
+if X(4)>0                                                                                                                
+X_(4)=r12*X(4)-0.3*R2;                                                                                                   
+else X_(2)=X_(2)+abs(r12*X(4)-0.3*R2); end;                                                                              
+if X_(3)>X_(7) X_(3)=X_(7); end;                                                                                         
+if X_(4)>X_(8) X_(4)=X_(8); end;                                                                                         
+;                                                                                                                        
+%KX
+if flag_nd==0; X_=X_'; end;
+function [u_,v_]=mat_ogr(Q,X,n);
+%U
+u_=[];
+v_=[];
+%KU
+function KonFail
+%Q
+q_max=[1500,2500];
+%KQ
+%x0
+x0=[0,0,6*10^6,10*10^6,1500,2500,6*10^6,10*10^6];
+%Kx0
+%Q1
+q_min=[0,0];
+%KQ1
+%NC
+num_coalic=2;
+%KNC
+%FN
+flag_nd=0;
+%KFN
+%t0
+t0=0;
+%Kt0
+%T
+T=24;
+%KT
+%rq
+r_q=[1,1];
+%Krq
+%rs
+r_set=[15,15];
+%Krs

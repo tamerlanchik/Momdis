@@ -1,1 +1,0 @@
-function y=mat_fun(X,Q,N);/nT_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);/nJ_norm=[1000,1000];/nL=1;/n%J/nJ(1)=1;/n%KJ/nif N==0; y=J; else y=J(N); end;/nfunction X_=mat_mod(dt,X,Q);/nglobal flag_nd;/nload data_flag_nd;/n%C/nL=1;/n%KC/n%X/nx_(1)=1;/n%KX/nif flag_nd==0; X_=X_'; end;/nfunction [u_,v_]=mat_ogr(Q,X,n);/n%U/n
