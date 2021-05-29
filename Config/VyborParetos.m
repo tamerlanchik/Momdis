@@ -22,7 +22,7 @@ function varargout = VyborParetos(varargin)
 
 % Edit the above text to modify the response to help VyborParetos
 
-% Last Modified by GUIDE v2.5 14-Feb-2006 01:36:35
+% Last Modified by GUIDE v2.5 23-Apr-2020 19:35:56
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -142,5 +142,3 @@ set(handles.mparset3, 'Value', 1);
 numparetset=3
 save data_tipmetnp numparetset
 set(handles.stparetset, 'Enable', 'On');
-
-

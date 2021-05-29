@@ -22,7 +22,7 @@ function varargout = VyborStek1(varargin)
 
 % Edit the above text to modify the response to help VyborStek1
 
-% Last Modified by GUIDE v2.5 25-Feb-2006 00:50:15
+% Last Modified by GUIDE v2.5 23-Apr-2020 19:45:49
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -123,5 +123,3 @@ set(handles.mstek12, 'Value', 1);
 numst7=2
 save data_tipmetst7 numst7
 set(handles.ststek1, 'Enable', 'On');
-
-

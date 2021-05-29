@@ -22,7 +22,7 @@ function varargout = vyvodRezult(varargin)
 
 % Edit the above text to modify the response to help vyvodRezult
 
-% Last Modified by GUIDE v2.5 04-Dec-2005 20:16:01
+% Last Modified by GUIDE v2.5 23-Apr-2020 18:57:29
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -490,3 +490,13 @@ function expword_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 
+
+
+% --- Executes on key press with focus on metObPo and none of its controls.
+function metObPo_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to metObPo (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)

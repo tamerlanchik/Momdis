@@ -2,24 +2,24 @@
 function OtkrModel;
 
 k=which('momdis.m');
-put=strrep(k,'momdis.m','Models/*.m');
+put=strrep(k,'momdis.m','Models\*.m');
 [name,FPath]=uigetfile(put);
 name=name(1:(length(name)-2));
 set(findobj(inpmodel, 'Tag', 'namemod') , 'String', name);
 
 %name=get(findobj(inpmodel, 'Tag', 'namemod'),'String');
 
-% пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% Поиск пути к момдису
 %k=which('momdis.m');
 k=strrep(k,'momdis.m','');
 %s=strcat(k,'Models');
 
-%пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
-%s10=strcat(s,'/',name,'.m');
-s10=strcat(FPath,'/',name,'.m');
+%создание стороки с именем модели
+%s10=strcat(s,'\',name,'.m');
+s10=strcat(FPath,'\',name,'.m');
 k1=strcat(k,'diller');
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля показателей
 fail=fopen(s10,'r');
 failZ=fopen(k1,'w');
 while 1
@@ -42,7 +42,7 @@ set(findobj(inpmodel, 'Tag', 'modj') , 'String', A);
 fclose(fail);
 fclose(failZ);
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля состояния
 fail2=fopen(s10,'r');
 failZ2=fopen(k1,'w');
 while 1
@@ -65,7 +65,7 @@ set(findobj(inpmodel, 'Tag', 'modx') , 'String', A);
 fclose(fail2);
 fclose(failZ2);
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля параметров
 fail8=fopen(s10,'r');
 failZ8=fopen(k1,'w');
 while 1
@@ -105,7 +105,7 @@ end
 fclose(fail3);
 fclose(failZ3);
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля начальные значения
 fail7=fopen(s10,'r');
 failZ7=fopen(k1,'w');
 while 1
@@ -125,7 +125,7 @@ end
 fclose(fail7);
 fclose(failZ7);
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% Размерности вектора параметров по каждой коалиции
 fail9=fopen(s10,'r');
 failZ9=fopen(k1,'w');
 while 1
@@ -145,7 +145,7 @@ end
 fclose(fail9);
 fclose(failZ9);
 
-% пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
+% Число сетевых точек
 fail10=fopen(s10,'r');
 failZ10=fopen(k1,'w');
 while 1
@@ -166,7 +166,7 @@ fclose(fail10);
 fclose(failZ10);
 
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля ограничений
 fail4=fopen(s10,'r');
 failZ4=fopen(k1,'w');
 while 1
@@ -189,7 +189,7 @@ set(findobj(inpmodel, 'Tag', 'modupr') , 'String', A);
 fclose(fail4);
 fclose(failZ4);
 %---
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% заполнение поля констант
 fail5=fopen(s10,'r');
 failZ5=fopen(k1,'w');
 while 1
@@ -212,7 +212,7 @@ set(findobj(inpmodel, 'Tag', 'modconst') , 'String', A);
 fclose(fail5);
 fclose(failZ5);
 
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% применение типа модели и колличества коалиций
 % 
 fail6=fopen(s10,'r');
 while 1
@@ -243,7 +243,7 @@ set(findobj(inpmodel, 'Tag', 'textTakt') , 'Visible', 'Off');
 set(findobj(inpmodel, 'Tag', 'nTakt') , 'Visible', 'Off');
 
 %numflagnd;
-% пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+% интервал интегрирования
 % t0
 fail11=fopen(s10,'r');
 failZ11=fopen(k1,'w');
