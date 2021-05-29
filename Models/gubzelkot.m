@@ -1,5 +1,3 @@
-% Gubanova, Zelenev, Kotov
-
 function y=mat_fun(X,Q,N);
 T_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);
 J_norm=[1000,1000];
@@ -128,10 +126,10 @@ function KonFail
 q_max=[400,400];
 %KQ
 %x0
-x0 = [0 0 0 0 0 0];
+x0 = [0.1 0.1 0.1 0.1 0.1 0.1];
 %Kx0
 %Q1
-q_min=[0,0];
+q_min=[355,355];
 %KQ1
 %NC
 num_coalic=2;
@@ -140,7 +138,7 @@ num_coalic=2;
 flag_nd=1;
 %KFN
 %NT
-Nt=10;
+Nt=1;
 %KNT
 %rq
 r_q=[1,1];
