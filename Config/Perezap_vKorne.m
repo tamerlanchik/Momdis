@@ -109,7 +109,7 @@ set(findobj(mmenu, 'Tag', 'moptimiz') , 'Enable', 'on');
 
 % записываю в файл состояния имя примененной модели
 fail=fopen('startcong.txt','w');
-fprintf(fail, '%s\n', name);
+fprintf(fail, '%s/n', name);
 fclose(fail);
 
 % Поиск пути к момдису
@@ -118,7 +118,7 @@ k=strrep(k,'momdis.m','');
 s=strcat(k,'Models');
 
 %создание стороки с именем модели
-s10=strcat(s,'\',name,'.m');
+s10=strcat(s,'/',name,'.m');
 
 %создание сторок с именем файлов модели в корне
 k1=strcat(k,'mat_fun.m');
@@ -198,7 +198,7 @@ end
 fclose(fail);
 razs=num2str(raz);
 failR=fopen('startcong.txt','a');
-fprintf(failR, '%s\n', razs);
+fprintf(failR, '%s/n', razs);
 fclose(failR);
 
 %состояние
@@ -224,7 +224,7 @@ end
 fclose(fail2);
 razs=num2str(raz);
 failR=fopen('startcong.txt','a');
-fprintf(failR, '%s\n', razs);
+fprintf(failR, '%s/n', razs);
 fclose(failR);
 
 %показатели
@@ -247,7 +247,7 @@ end
 fclose(fail3);
 razs=num2str(raz);
 failR=fopen('startcong.txt','a');
-fprintf(failR, '%s\n', razs);
+fprintf(failR, '%s/n', razs);
 fclose(failR);
 
 close(inpmodel);

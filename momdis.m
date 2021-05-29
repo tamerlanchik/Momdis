@@ -3,26 +3,26 @@ warning off;
 
 
 s=which('momdis.m');
-s=strrep(s,'\momdis.m','');
+s=strrep(s,'/momdis.m','');
 
-%addpath(strcat(s,'\Q2'));
-%addpath(strcat(s,'\Q4'));
-%addpath(strcat(s,'\Q8'));
-%addpath(strcat(s,'\Q8'));
-%addpath(strcat(s,'\CTEK'));
-%addpath(strcat(s,'\Check'));
-%addpath(strcat(s,'\Reports'));
-addpath(strcat(s,'\Config'));
-%addpath(strcat(s,'\Nash'));
-%addpath(strcat(s,'\Shepli'));
-%addpath(strcat(s,'\Matrix'));
-addpath(strcat(s,'\Graph'));
-addpath(strcat(s,'\Drivers'));
-addpath(strcat(s,'\Algorithms'));
-addpath(strcat(s,'\Models'));
-addpath(strcat(s,'\Data'));
-addpath(strcat(s,'\Analit'));
-addpath(strcat(s,'\Modelir'));
+%addpath(strcat(s,'/Q2'));
+%addpath(strcat(s,'/Q4'));
+%addpath(strcat(s,'/Q8'));
+%addpath(strcat(s,'/Q8'));
+%addpath(strcat(s,'/CTEK'));
+%addpath(strcat(s,'/Check'));
+%addpath(strcat(s,'/Reports'));
+addpath(strcat(s,'/Config'));
+%addpath(strcat(s,'/Nash'));
+%addpath(strcat(s,'/Shepli'));
+%addpath(strcat(s,'/Matrix'));
+addpath(strcat(s,'/Graph'));
+addpath(strcat(s,'/Drivers'));
+addpath(strcat(s,'/Algorithms'));
+addpath(strcat(s,'/Models'));
+addpath(strcat(s,'/Data'));
+addpath(strcat(s,'/Analit'));
+addpath(strcat(s,'/Modelir'));
 addpath(s);
 
 cd(s);

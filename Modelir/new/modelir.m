@@ -351,10 +351,10 @@ function rdb_CrtFunction(hObject, eventdata, handles);
 global ModMethods;
 rdb_name=get(hObject, 'Tag');
 rdb_str=get(hObject, 'String');
-file_name=strcat('momdis\data_', rdb_name, '.mat');
+file_name=strcat('momdis/data_', rdb_name, '.mat');
 if exist(file_name, 'file')~=0
     exist(file_name, 'file');
-    load(strcat('momdis\data_', rdb_name));
+    load(strcat('momdis/data_', rdb_name));
     s=size(Data0.Q);
     if s(1)==1
         set(hObject, 'Enable', 'on');
@@ -373,7 +373,7 @@ xbase=base(1);
 ybase=base(2);
 width=base(3);
 height=base(4);
-load('momdis\data_x0');
+load('momdis/data_x0');
 s=size(x0);
 i=0;
 for i=2:s(2)
@@ -381,7 +381,7 @@ for i=2:s(2)
 end;
 
 function chkb_DltFunction(hObject, eventdata, handles);
-load('momdis\data_x0');
+load('momdis/data_x0');
 s=size(x0);
 i=0;
 for i=2:s(2)
@@ -400,7 +400,7 @@ for i=2:count(1)
     set(h,'Value',0);
 end;
 set(hObject, 'Value', 1);
-load(strcat('momdis\data_',get(hObject, 'Tag')));
+load(strcat('momdis/data_',get(hObject, 'Tag')));
 set(findobj('Tag', 'selfQ'), 'String', strcat('q=', mat2str(Data0.Q), ';'));
 
 
@@ -409,7 +409,7 @@ function modelstart_Callback(hObject, eventdata, handles)
 % hObject    handle to modelstart (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-load('momdis\data_flag_nd');
+load('momdis/data_flag_nd');
 eval(get(findobj('Tag', 'selfQ'), 'String'));
 eval(get(findobj('Tag', 'nu'), 'String'));
 eval(get(findobj('Tag', 'tint'), 'String'));
@@ -507,7 +507,7 @@ if ispc
 else
     set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
 end
-load('momdis\data_qmm');
+load('momdis/data_qmm');
 set(hObject, 'String', strcat('q=', mat2str(q_min), ';'));
 
 
@@ -558,7 +558,7 @@ if ispc
 else
     set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
 end
-load('momdis\data_x0');
+load('momdis/data_x0');
 set(hObject, 'String', strcat('x0=', deblank(mat2str(x0)), ';'));
 
 
@@ -585,16 +585,16 @@ if ispc
 else
     set(hObject,'BackgroundColor',get(0,'defaultUicontrolBackgroundColor'));
 end
-load('momdis\data_flag_nd');
+load('momdis/data_flag_nd');
 if flag_nd==0
-    load('momdis\data_Tint');
+    load('momdis/data_Tint');
     set(hObject, 'String', strcat('t0=', num2str(t0),';'));
     set(findobj('Tag', 'Tk'), 'String', strcat('T=', num2str(T), ';'));
     set(findobj('Tag', 'text12'), 'String', char('Интервал интегрирования', '[t0, T]'));
     set(findobj('Tag', 'Tk'), 'Visible', 'on');
 end;
 if flag_nd==1
-    load('momdis\data_Nt');
+    load('momdis/data_Nt');
     set(hObject, 'String', strcat('Nt=', num2str(Nt), ';'));
     set(findobj('Tag', 'text12'), 'String', 'Число тактов вычисления');
     set(findobj('Tag', 'Tk'), 'Visible', 'off');

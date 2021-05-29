@@ -37,19 +37,19 @@ data_uku_A
 6. Nash_Set_C_3J(n);
 % Сильное активное равновесие (локальный Нэш на области слабых равновесий)
 НЕ РАБОТАЕТ
-??? Error: File: e:\momdis\Algorithms\Pareto_3J.m Line: 98 Column: 1
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
 "end" expected, "End of Input" found.
 
 
 7. Будет ли работать точный НЕШ для 3-х J
 Pareto_3J(n)
 НЕ РАБОТАЕТ
-??? Error: File: e:\momdis\Algorithms\Pareto_3J.m Line: 98 Column: 1
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
 "end" expected, "End of Input" found.
 
 8. Сетевой Парето не работает
 function Pareto_3J(n);
-??? Error: File: e:\momdis\Algorithms\Pareto_3J.m Line: 98 Column: 1
+??? Error: File: e:/momdis/Algorithms/Pareto_3J.m Line: 98 Column: 1
 "end" expected, "End of Input" found.
 
 9. Не могу определить, работаел ли Неш, т.к. не работает парето
