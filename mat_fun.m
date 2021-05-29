@@ -1,1 +1,24 @@
-function y=mat_fun(X,Q,N);/nT_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);/nJ_norm=[1000,1000];/nbeta=0.016;                /nP=4*10^6;                  /nr11=0.2;                   /nr12=0.2;                   /nr21=0.02;                  /nr22=0.02;                  /ns1=3000;                   /ns2=3000;                   /nmu=0.014;                  /nnu=0.1;                    /nc=42*10^6;                 /na1=38.78*10^6;             /na2=101.45*10^6;            /n/nv_=[];/n
+function y=mat_fun(X,Q,N);
+T_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);
+J_norm=[1000,1000];
+a11=1;         
+a12=1;         
+a13=1;         
+a21=0.1;       
+a22=0.1;       
+a23=0.1;       
+Smax=4;        
+Lmax=3;        
+P41max=0.25;   
+P51max=0.35;   
+P32max=0.6;    
+P16max=0.2;    
+P17max=0.95;   
+n1=5;          
+n3=0.1;        
+n4=0.1;        
+n5=0.1;        
+n6=0.1;        
+J(1)=-a11*(Smax-X_T(6))*(Smax-X_T(6))-a12*(Lmax-X_T(7))*(Lmax-X_T(7))+a13*(4-X_T(2));                            
+J(2)=a21*(Smax-X_T(6))*(Smax-X_T(6))+a22*(Lmax-X_T(7))*(Lmax-X_T(7))+a23*X_T(1);                                 
+if N==0; y=J; else y=J(N); end;

@@ -1,0 +1,37 @@
+
+function ZakonRabSMod;
+warning off;
+%закончить работу с моделью
+
+set(findobj(mmenu, 'Tag', 'namemodelvmenu') , 'String', 'НЕТ');
+    set(findobj(mmenu, 'Tag', 'mmodelir') , 'Enable', 'off');
+    set(findobj(mmenu, 'Tag', 'moptimiz') , 'Enable', 'off');
+    set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'off');
+fail=fopen('startcong.txt','w');
+fprintf(fail, '%s\n', 'НЕТ');
+fclose(fail);
+
+delete data_field.mat
+delete data_uku_A.mat
+delete data_nash_s.mat
+delete data_nash_e.mat
+delete data_uku.mat
+delete data_nash_a.mat
+delete data_par_s.mat
+delete data_stek1.mat
+delete data_stek1.mat
+delete data_stek5.mat
+delete data_tipmetnsi.mat
+delete data_tipmetnp.mat
+delete data_flag_nd.mat
+delete data_Nt.mat
+delete data_num_coalic.mat
+delete data_qmm.mat
+data_r_q.mat
+data_r_set.mat
+data_Tint.mat
+data_x0.mat
+
+
+ 
+ 
