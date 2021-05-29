@@ -22,7 +22,7 @@ function varargout = VyborMetOpt(varargin)
 
 % Edit the above text to modify the response to help VyborMetOpt
 
-% Last Modified by GUIDE v2.5 13-May-2010 09:26:54
+% Last Modified by GUIDE v2.5 29-May-2021 18:58:04
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -468,3 +468,20 @@ function metUKUksF_Callback(hObject, eventdata, handles)
 % Hint: get(hObject,'Value') returns toggle state of metUKUksF
 
 
+
+
+% --- Executes during object creation, after setting all properties.
+function figure1_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+
+% --- Executes on key press with focus on metPerets and none of its controls.
+function metPerets_KeyPressFcn(hObject, eventdata, handles)
+% hObject    handle to metPerets (see GCBO)
+% eventdata  structure with the following fields (see MATLAB.UI.CONTROL.UICONTROL)
+%	Key: name of the key that was pressed, in lower case
+%	Character: character interpretation of the key(s) that was pressed
+%	Modifier: name(s) of the modifier key(s) (i.e., control, shift) pressed
+% handles    structure with handles and user data (see GUIDATA)
