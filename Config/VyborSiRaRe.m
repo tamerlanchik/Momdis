@@ -23,7 +23,7 @@ function varargout = VyborSiRaRe(varargin)
 
 % Edit the above text to modify the response to help VyborSiRaRe
 
-% Last Modified by GUIDE v2.5 14-Feb-2006 00:56:10
+% Last Modified by GUIDE v2.5 27-Apr-2020 10:21:48
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -106,5 +106,3 @@ function stsirare_Callback(hObject, eventdata, handles)
 % hObject    handle to stsirare (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-

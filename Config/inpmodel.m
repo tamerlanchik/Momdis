@@ -25,7 +25,7 @@ function varargout = inpmodel(varargin)
 
 % Edit the above text to modify the response to help inpmodel
 
-% Last Modified by GUIDE v2.5 19-Feb-2006 04:32:04
+% Last Modified by GUIDE v2.5 23-Apr-2020 19:16:06
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -733,5 +733,3 @@ function metinteg_Callback(hObject, eventdata, handles)
 
 % Hints: contents = get(hObject,'String') returns metinteg contents as cell array
 %        contents{get(hObject,'Value')} returns selected item from metinteg
-
-

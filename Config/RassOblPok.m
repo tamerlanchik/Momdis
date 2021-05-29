@@ -22,7 +22,7 @@ function varargout = RassOblPok(varargin)
 
 % Edit the above text to modify the response to help RassOblPok
 
-% Last Modified by GUIDE v2.5 24-Feb-2006 12:49:23
+% Last Modified by GUIDE v2.5 23-Apr-2020 19:23:54
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -85,5 +85,3 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % hObject    handle to pushbutton2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-
