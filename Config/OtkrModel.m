@@ -2,7 +2,7 @@
 function OtkrModel;
 
 k=which('momdis.m');
-put=strrep(k,'momdis.m','Models/*.m');
+put=strrep(k,'momdis.m','Models\*.m');
 [name,FPath]=uigetfile(put);
 name=name(1:(length(name)-2));
 set(findobj(inpmodel, 'Tag', 'namemod') , 'String', name);
@@ -15,8 +15,8 @@ k=strrep(k,'momdis.m','');
 %s=strcat(k,'Models');
 
 %создание стороки с именем модели
-%s10=strcat(s,'/',name,'.m');
-s10=strcat(FPath,'/',name,'.m');
+%s10=strcat(s,'\',name,'.m');
+s10=strcat(FPath,'\',name,'.m');
 k1=strcat(k,'diller');
 
 % заполнение поля показателей

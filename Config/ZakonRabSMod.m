@@ -10,7 +10,7 @@ set(findobj(mmenu, 'Tag', 'namemodelvmenu') , 'String', 'НЕТ');
     set(findobj(mmenu, 'Tag', 'shmetopt') , 'Enable', 'off');
     set(findobj(mmenu, 'Tag', 'mmodelir') , 'Enable', 'off');
 fail=fopen('startcong.txt','w');
-fprintf(fail, '%s/n', 'НЕТ');
+fprintf(fail, '%s\n', 'НЕТ');
 fclose(fail);
 
 delete data_field.mat
