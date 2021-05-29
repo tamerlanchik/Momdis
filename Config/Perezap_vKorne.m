@@ -118,7 +118,7 @@ k=strrep(k,'momdis.m','');
 s=strcat(k,'Models');
 
 %создание стороки с именем модели
-s10=strcat(s,'\',name,'.m');
+s10=strcat(s,filesep,name,'.m');
 
 %создание сторок с именем файлов модели в корне
 k1=strcat(k,'mat_fun.m');

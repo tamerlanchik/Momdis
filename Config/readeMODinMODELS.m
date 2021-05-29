@@ -16,7 +16,7 @@ s=which('momdis.m');
 s=strrep(s,'momdis.m','');
 s=strcat(s,'Models');
 
-s10=strcat(s,'\',name,'.m');
+s10=strcat(s,filesep,name,'.m');
 %s1=strcat(s,'\',name,'mfu.m');
 %s2=strcat(s,'\',name,'min.m');
 %s3=strcat(s,'\',name,'mmo.m');
