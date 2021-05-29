@@ -17,7 +17,8 @@ q_max1=zeros(1,max_r_q(1)); q_max1(1,1:r_q(1))=q_max(1,1:r_q(1));
 q_max2=zeros(1,max_r_q(2)); q_max2(1,1:r_q(2))=q_max(1,(r_q(1)+1):(r_q(1)+r_q(2)));
 h_q1=(q_max1-q_min1)./(r_set1-1); for i=1:size(h_q1,2); if h_q1(1,i)==0; h_q1(1,i)=1; end; end;
 h_q2=(q_max2-q_min2)./(r_set2-1); for i=1:size(h_q2,2); if h_q2(1,i)==0; h_q2(1,i)=1; end; end;
-
+% h_q1(1)=1
+% h_q2(1)=1
 % Основной этап - циклы по каждому из параметров, начиная с последних в массиве 8х8
 i=0; tic;
 % for q18=q_min1(8):h_q1(8):q_max1(8);
