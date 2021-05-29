@@ -1,5 +1,5 @@
 function y=Uku_Set_2J;
-% Классическое УКУ-равновесие
+% РљР»Р°СЃСЃРёС‡РµСЃРєРѕРµ РЈРљРЈ-СЂР°РІРЅРѕРІРµСЃРёРµ
 load data_field;
 qw=0; S=size(DataM.J); qw_=zeros(1,S(3)); qj=[size(DataM.Q,3),size(DataM.J,3)];
 

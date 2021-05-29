@@ -35,14 +35,14 @@ namemod=fgetl(fail);
 set(findobj(mmenu, 'Tag', 'namemodelvmenu') , 'String', namemod);
 fclose(fail);
 
-modno='НЕТ';
+modno='РќР•Рў';
 if (length(namemod)==length(modno))& (namemod(1)==modno(1))& (namemod(2)==modno(2)) & (namemod(3)==modno(3))
-    %нет модели, выключаю все пункты меню кроме описания и помощи
+    %РЅРµС‚ РјРѕРґРµР»Рё, РІС‹РєР»СЋС‡Р°СЋ РІСЃРµ РїСѓРЅРєС‚С‹ РјРµРЅСЋ РєСЂРѕРјРµ РѕРїРёСЃР°РЅРёСЏ Рё РїРѕРјРѕС‰Рё
     set(findobj(mmenu, 'Tag', 'mmodelir') , 'Enable', 'off');
     set(findobj(mmenu, 'Tag', 'moptimiz') , 'Enable', 'off');
     set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'off');
 else
-    %есть модели, выключаю только меню вывода результатов    
+    %РµСЃС‚СЊ РјРѕРґРµР»Рё, РІС‹РєР»СЋС‡Р°СЋ С‚РѕР»СЊРєРѕ РјРµРЅСЋ РІС‹РІРѕРґР° СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ    
     set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'off');
 end
 

@@ -1,6 +1,6 @@
 function vyvodWepli
 
-'вывод метода Шепли'
+'РІС‹РІРѕРґ РјРµС‚РѕРґР° РЁРµРїР»Рё'
 
 load data_num_coalic;
 

@@ -1,6 +1,6 @@
 function plotUKUksOff
 
-'выкл метода УКУ сетевого'
+'РІС‹РєР» РјРµС‚РѕРґР° РЈРљРЈ СЃРµС‚РµРІРѕРіРѕ'
 
 load data_num_coalic;
 

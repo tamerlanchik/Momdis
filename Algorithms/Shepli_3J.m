@@ -1,8 +1,8 @@
 function y=Shepli_3J(n);
 load data_par_s Data0; Data_p=Data0;
 ParetoJ=Data_p.J;
-if n==1; load data_nash_t Data0; end; % „«ï â®ç­®£® íè 
-if n==2; load data_stek1 Data0; end; % „«ï á¥â¥¢®£® íè 
+if n==1; load data_nash_t Data0; end; % â€Â«Ğ¿ Ğ²Â®Ğ·Â­Â®ĞˆÂ® ĞŒĞ½Ğ¸Â 
+if n==2; load data_stek1 Data0; end; % â€Â«Ğ¿ Ğ±ÒĞ²ÒÑÂ®ĞˆÂ® ĞŒĞ½Ğ¸Â 
 NashJ=Data0.J;
 tic;
 Buff=ParetoJ(:,1)+ParetoJ(:,2)+ParetoJ(:,3); [V123,nn]=min(Buff);

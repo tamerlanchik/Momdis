@@ -342,7 +342,7 @@ function pushbutton4_Callback(hObject, eventdata, handles)
 
 fail=fopen('startcong.txt','rt');
 name=fgetl(fail);
-modno='Õ≈“';
+modno='–ù–ï–¢';
 if (length(namemod)==length(modno))& (namemod(1)==modno(1))& (namemod(2)==modno(2)) & (namemod(3)==modno(3))
     1;
 else

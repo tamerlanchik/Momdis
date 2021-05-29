@@ -1,5 +1,5 @@
 function y=Nash_Set_A_3J;
-% Сетевой Нэш (сильное активное равновесие)
+% РЎРµС‚РµРІРѕР№ РќСЌС€ (СЃРёР»СЊРЅРѕРµ Р°РєС‚РёРІРЅРѕРµ СЂР°РІРЅРѕРІРµСЃРёРµ)
 load data_field;
 j_ar(:,:,:,1:size(DataM.Q,4))=DataM.Q; j_ar(:,:,:,(size(DataM.Q,4)+1):(size(DataM.Q,4)+size(DataM.J,4)))=DataM.J;
 qj=size(j_ar,4); j1=qj-2; j2=qj-1; j3=qj; C_=zeros(0,qj);

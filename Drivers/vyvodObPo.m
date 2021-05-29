@@ -1,11 +1,11 @@
 function vyvodObPo
 
-'вывод расчета области показателей'
+'РІС‹РІРѕРґ СЂР°СЃС‡РµС‚Р° РѕР±Р»Р°СЃС‚Рё РїРѕРєР°Р·Р°С‚РµР»РµР№'
 
 load data_num_coalic;
 
 if num_coalic==2;
-% 2 коалиции
+% 2 РєРѕР°Р»РёС†РёРё
 
 load data_field;
 
@@ -76,7 +76,7 @@ set(fff , 'String', e);
 end;
 
 if num_coalic==3;
-% 3 коалиции
+% 3 РєРѕР°Р»РёС†РёРё
 
 load data_field;
 [n,m,n1,k]=size(DataM.J);

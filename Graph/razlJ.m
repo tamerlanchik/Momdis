@@ -12,7 +12,7 @@ set(findobj(graphics, 'Tag', 'GrUKUsFr') , 'Visible', 'Off');
 end;
 
 if num_coalic==3;
-set(findobj(graphics, 'Tag', 'GrUKUs') , 'String', 'УКУ безкоалиц. (сет.)');
+set(findobj(graphics, 'Tag', 'GrUKUs') , 'String', 'РЈРљРЈ Р±РµР·РєРѕР°Р»РёС†. (СЃРµС‚.)');
 end;
 
 

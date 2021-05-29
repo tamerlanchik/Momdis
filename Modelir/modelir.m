@@ -590,13 +590,13 @@ if flag_nd==0
     load('momdis\data_Tint');
     set(hObject, 'String', strcat('t0=', num2str(t0),';'));
     set(findobj('Tag', 'Tk'), 'String', strcat('T=', num2str(T), ';'));
-    set(findobj('Tag', 'text12'), 'String', char('Интервал интегрирования', '[t0, T]'));
+    set(findobj('Tag', 'text12'), 'String', char('РРЅС‚РµСЂРІР°Р» РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРёСЏ', '[t0, T]'));
     set(findobj('Tag', 'Tk'), 'Visible', 'on');
 end;
 if flag_nd==1
     load('momdis\data_Nt');
     set(hObject, 'String', strcat('Nt=', num2str(Nt), ';'));
-    set(findobj('Tag', 'text12'), 'String', 'Число тактов вычисления');
+    set(findobj('Tag', 'text12'), 'String', 'Р§РёСЃР»Рѕ С‚Р°РєС‚РѕРІ РІС‹С‡РёСЃР»РµРЅРёСЏ');
     set(findobj('Tag', 'Tk'), 'Visible', 'off');
 end;
 

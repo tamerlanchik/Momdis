@@ -1,6 +1,6 @@
 function vyvodSTEK1
 
-'вывод метода СТЭК-1'
+'РІС‹РІРѕРґ РјРµС‚РѕРґР° РЎРўР­Рљ-1'
 
 load data_num_coalic;
 

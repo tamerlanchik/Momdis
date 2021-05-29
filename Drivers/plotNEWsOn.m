@@ -1,6 +1,6 @@
 function plotNEWsOn
 
-'отрисовка метода Нэш сетевого'
+'РѕС‚СЂРёСЃРѕРІРєР° РјРµС‚РѕРґР° РќСЌС€ СЃРµС‚РµРІРѕРіРѕ'
 
 
 load data_num_coalic;
@@ -10,7 +10,7 @@ VyborTipJ
     
 %load data_nash_s;
 %plot(Data0.J(:,1),Data0.J(:,2),'m*');
-%Построение областей (0 - Data0, 1,2 - Data1,Data2)
+%РџРѕСЃС‚СЂРѕРµРЅРёРµ РѕР±Р»Р°СЃС‚РµР№ (0 - Data0, 1,2 - Data1,Data2)
 %load data_nash_s;
 %if n==0; plot(Data0.J(:,1),Data0.J(:,2),'m*'); hold on; end;
 %if n==1; plot(Data1.J(:,1),Data1.J(:,2),'m.'); hold on; end;

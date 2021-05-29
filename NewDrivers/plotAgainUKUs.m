@@ -1,5 +1,5 @@
 function plotAgainUKUs(n)
-%перерисовка УКУ сетевого
+%РїРµСЂРµСЂРёСЃРѕРІРєР° РЈРљРЈ СЃРµС‚РµРІРѕРіРѕ
 load data_num_coalic;
 
 if num_coalic==2;

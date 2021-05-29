@@ -14,7 +14,7 @@ set(findobj(VyborMetOpt, 'Tag', 'metUKUks3') , 'Visible', 'Off');
 end;
 
 if num_coalic==3;
-set(findobj(VyborMetOpt, 'Tag', 'textUKUs') , 'String', 'УКУ безкоалиц. (сет.)');
+set(findobj(VyborMetOpt, 'Tag', 'textUKUs') , 'String', 'РЈРљРЈ Р±РµР·РєРѕР°Р»РёС†. (СЃРµС‚.)');
 end;
 
 

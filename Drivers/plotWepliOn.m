@@ -1,6 +1,6 @@
 function plotWepliOn
 
-'отрисовка метода Шепли'
+'РѕС‚СЂРёСЃРѕРІРєР° РјРµС‚РѕРґР° РЁРµРїР»Рё'
 
 
 load data_num_coalic;

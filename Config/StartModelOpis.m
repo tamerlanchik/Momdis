@@ -8,7 +8,7 @@ fclose(fail);
 
 set(findobj(inpmodel, 'Tag', 'namemod') , 'String', name);
 
-modno='НЕТ';
+modno='РќР•Рў';
 if (length(name)==length(modno))&(name(1)==modno(1))&(name(2)==modno(2))&(name(3)==modno(3))
     return
 else
@@ -22,16 +22,16 @@ put=strrep(k,'momdis.m','Models\*.m');
 
 %name=get(findobj(inpmodel, 'Tag', 'namemod'),'String');
 
-% Поиск пути к момдису
+% РџРѕРёСЃРє РїСѓС‚Рё Рє РјРѕРјРґРёСЃСѓ
 %k=which('momdis.m');
 k=strrep(k,'momdis.m','');
 s=strcat(k,'Models');
 
-%создание стороки с именем модели
+%СЃРѕР·РґР°РЅРёРµ СЃС‚РѕСЂРѕРєРё СЃ РёРјРµРЅРµРј РјРѕРґРµР»Рё
 s10=strcat(s,'\',name,'.m');
 k1=strcat(k,'diller');
 
-% заполнение поля показателей
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ РїРѕРєР°Р·Р°С‚РµР»РµР№
 fail=fopen(s10,'r');
 failZ=fopen(k1,'w');
 while 1
@@ -54,7 +54,7 @@ set(findobj(inpmodel, 'Tag', 'modj') , 'String', A);
 fclose(fail);
 fclose(failZ);
 
-% заполнение поля состояния
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ СЃРѕСЃС‚РѕСЏРЅРёСЏ
 fail2=fopen(s10,'r');
 failZ2=fopen(k1,'w');
 while 1
@@ -77,7 +77,7 @@ set(findobj(inpmodel, 'Tag', 'modx') , 'String', A);
 fclose(fail2);
 fclose(failZ2);
 
-% заполнение поля параметров
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ РїР°СЂР°РјРµС‚СЂРѕРІ
 fail8=fopen(s10,'r');
 failZ8=fopen(k1,'w');
 while 1
@@ -117,7 +117,7 @@ end
 fclose(fail3);
 fclose(failZ3);
 
-% заполнение поля начальные значения
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ РЅР°С‡Р°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 fail7=fopen(s10,'r');
 failZ7=fopen(k1,'w');
 while 1
@@ -137,7 +137,7 @@ end
 fclose(fail7);
 fclose(failZ7);
 
-% Размерности вектора параметров по каждой коалиции
+% Р Р°Р·РјРµСЂРЅРѕСЃС‚Рё РІРµРєС‚РѕСЂР° РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ РєР°Р¶РґРѕР№ РєРѕР°Р»РёС†РёРё
 fail9=fopen(s10,'r');
 failZ9=fopen(k1,'w');
 while 1
@@ -157,7 +157,7 @@ end
 fclose(fail9);
 fclose(failZ9);
 
-% Число сетевых точек
+% Р§РёСЃР»Рѕ СЃРµС‚РµРІС‹С… С‚РѕС‡РµРє
 fail10=fopen(s10,'r');
 failZ10=fopen(k1,'w');
 while 1
@@ -178,7 +178,7 @@ fclose(fail10);
 fclose(failZ10);
 
 
-% заполнение поля ограничений
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ РѕРіСЂР°РЅРёС‡РµРЅРёР№
 fail4=fopen(s10,'r');
 failZ4=fopen(k1,'w');
 while 1
@@ -201,7 +201,7 @@ set(findobj(inpmodel, 'Tag', 'modupr') , 'String', A);
 fclose(fail4);
 fclose(failZ4);
 %---
-% заполнение поля констант
+% Р·Р°РїРѕР»РЅРµРЅРёРµ РїРѕР»СЏ РєРѕРЅСЃС‚Р°РЅС‚
 fail5=fopen(s10,'r');
 failZ5=fopen(k1,'w');
 while 1
@@ -224,7 +224,7 @@ set(findobj(inpmodel, 'Tag', 'modconst') , 'String', A);
 fclose(fail5);
 fclose(failZ5);
 
-% применение типа модели и колличества коалиций
+% РїСЂРёРјРµРЅРµРЅРёРµ С‚РёРїР° РјРѕРґРµР»Рё Рё РєРѕР»Р»РёС‡РµСЃС‚РІР° РєРѕР°Р»РёС†РёР№
 % 
 fail6=fopen(s10,'r');
 while 1
@@ -255,7 +255,7 @@ set(findobj(inpmodel, 'Tag', 'textTakt') , 'Visible', 'Off');
 set(findobj(inpmodel, 'Tag', 'nTakt') , 'Visible', 'Off');
 
 %numflagnd;
-% интервал интегрирования
+% РёРЅС‚РµСЂРІР°Р» РёРЅС‚РµРіСЂРёСЂРѕРІР°РЅРёСЏ
 % t0
 fail11=fopen(s10,'r');
 failZ11=fopen(k1,'w');

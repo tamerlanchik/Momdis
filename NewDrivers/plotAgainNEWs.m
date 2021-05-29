@@ -1,5 +1,5 @@
 function plotAgainNEWs(n)
-%перерисвока Нэш сетевого
+%РїРµСЂРµСЂРёСЃРІРѕРєР° РќСЌС€ СЃРµС‚РµРІРѕРіРѕ
 load data_num_coalic;
 
 if num_coalic==2;

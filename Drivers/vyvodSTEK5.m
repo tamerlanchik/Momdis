@@ -1,6 +1,6 @@
 function vyvodSTEK5
 
-'вывод метода СТЭК-5'
+'РІС‹РІРѕРґ РјРµС‚РѕРґР° РЎРўР­Рљ-5'
 
 load data_num_coalic;
 

@@ -4,14 +4,14 @@ function numcoalic;
 
 val=get(findobj(inpmodel, 'Tag', 'tagcoalic'),'value');
 
-switch val      % выбираем высвеченную строку
-case 1          % высвечена первая строка
+switch val      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
 
 %num_coalic=2;
 %save data_num_coalic num_coalic;
 
     
-%set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','вкл');
+%set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','РІРєР»');
     
 %set(findobj(inpmodel, 'Tag', 'knopkakoal'),'visible','off');
 %set(findobj(inpmodel, 'Tag', 'knopkakoal'),'value', 1)
@@ -40,7 +40,7 @@ case 1          % высвечена первая строка
 %set(findobj(inpmodel, 'Tag', 'modAupr'),'enable','on');
 %set(findobj(inpmodel, 'Tag', 'modAupr'),'BackGroundColor',[1,1,1]);
     
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 
 %set(findobj(inpmodel, 'Tag', 'knopkakoal'),'value', 0);
 %set(findobj(inpmodel, 'Tag', 'knopkakoal'),'visible','on');
@@ -73,7 +73,7 @@ case 2          % высвечена вторая строка
 %set(findobj(inpmodel, 'Tag', 'modAupr'),'BackGroundColor',[0.86,0.86,0.86]);
 
 
-case 3          % высвечена третья строка, на перспективу, для 4-х коалиций
+case 3          % РІС‹СЃРІРµС‡РµРЅР° С‚СЂРµС‚СЊСЏ СЃС‚СЂРѕРєР°, РЅР° РїРµСЂСЃРїРµРєС‚РёРІСѓ, РґР»СЏ 4-С… РєРѕР°Р»РёС†РёР№
 
 %set(findobj(inpmodel, 'Tag', 'knopkakoal'),'value', 0)
 

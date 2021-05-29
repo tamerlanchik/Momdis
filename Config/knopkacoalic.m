@@ -1,12 +1,12 @@
 
 function knopkacoalic;
-% не используется
+% РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ
 
 val=get(findobj(inpmodel, 'Tag', 'knopkakoal'),'value');
 
-if val==0 % кнопка отжата
+if val==0 % РєРЅРѕРїРєР° РѕС‚Р¶Р°С‚Р°
 
-set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','вкл');
+set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','РІРєР»');
     
 set(findobj(inpmodel, 'Tag', 'modx'),'enable','off');
 set(findobj(inpmodel, 'Tag', 'modx'),'BackGroundColor',[0.91,0.91,0.91]);
@@ -35,14 +35,14 @@ set(findobj(inpmodel, 'Tag', 'modQ1'),'BackGroundColor',[0.86,0.86,0.86]);
 set(findobj(inpmodel, 'Tag', 'modAupr'),'enable','off');
 set(findobj(inpmodel, 'Tag', 'modAupr'),'BackGroundColor',[0.86,0.86,0.86]);
 
-else    %кнопка утоплена
+else    %РєРЅРѕРїРєР° СѓС‚РѕРїР»РµРЅР°
 
 val=get(findobj(inpmodel, 'Tag', 'tagcoalic'),'value')
 
-switch val      % выбираем высвеченную строку
-case 1          % высвечена первая строка, неактивная позиция, т.к. на 2-х коалициях кнопка не активна
+switch val      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°, РЅРµР°РєС‚РёРІРЅР°СЏ РїРѕР·РёС†РёСЏ, С‚.Рє. РЅР° 2-С… РєРѕР°Р»РёС†РёСЏС… РєРЅРѕРїРєР° РЅРµ Р°РєС‚РёРІРЅР°
     
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 
 num_coalic=3;
 otherwise
@@ -50,7 +50,7 @@ otherwise
 end
 save data_num_coalic num_coalic;
 
-set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','выкл');
+set(findobj(inpmodel, 'Tag', 'knopkakoal'),'string','РІС‹РєР»');
     
 set(findobj(inpmodel, 'Tag', 'modx'),'BackGroundColor',[1,1,1]);
 set(findobj(inpmodel, 'Tag', 'modx'),'enable','on');

@@ -3,8 +3,8 @@ function numflagnd;
 %global flag_nd
 val=get(findobj(inpmodel, 'Tag', 'flagndnum'),'value');
 
-switch val      % выбираем высвеченную строку
-case 1          % высвечена первая строка
+switch val      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
 %flag_nd=0;  
 set(findobj(inpmodel, 'Tag', 'textint') , 'Visible', 'On');
 set(findobj(inpmodel, 'Tag', 't0int') , 'Visible', 'On');
@@ -15,7 +15,7 @@ set(findobj(inpmodel, 'Tag', 'metinteg') , 'Visible', 'On');
 set(findobj(inpmodel, 'Tag', 'textTakt') , 'Visible', 'Off');
 set(findobj(inpmodel, 'Tag', 'nTakt') , 'Visible', 'Off');
 
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 set(findobj(inpmodel, 'Tag', 'textint') , 'Visible', 'Off');
 set(findobj(inpmodel, 'Tag', 't0int') , 'Visible', 'Off');
 set(findobj(inpmodel, 'Tag', 'Tint') , 'Visible', 'Off');

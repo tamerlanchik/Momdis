@@ -1,20 +1,20 @@
 function metodObPo
 
-'выполнение расчета области показателей'
+'РІС‹РїРѕР»РЅРµРЅРёРµ СЂР°СЃС‡РµС‚Р° РѕР±Р»Р°СЃС‚Рё РїРѕРєР°Р·Р°С‚РµР»РµР№'
 
 load data_num_coalic;
 
 if num_coalic==2;
-% 2 коалиции
+% 2 РєРѕР°Р»РёС†РёРё
 Area_2J;
-% не трогать!
+% РЅРµ С‚СЂРѕРіР°С‚СЊ!
 set(findobj(mmenu, 'Tag', 'shmetopt') , 'Enable', 'On');
 set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'On');
 set(findobj(RassOblPok, 'Tag', 'na4robpok') , 'Enable', 'Off');
 end;
 
 if num_coalic==3;
-% не трогать!
+% РЅРµ С‚СЂРѕРіР°С‚СЊ!
 Area_3J;
 set(findobj(mmenu, 'Tag', 'shmetopt') , 'Enable', 'On');
 set(findobj(mmenu, 'Tag', 'mrezult') , 'Enable', 'On');

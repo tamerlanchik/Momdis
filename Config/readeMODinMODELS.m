@@ -25,7 +25,7 @@ s10=strcat(s,'\',name,'.m');
 %s6=strcat(s,'\',name,'mpr.m');
 
 %-----------------------------------------------------------------------
-% создание mat_fun
+% СЃРѕР·РґР°РЅРёРµ mat_fun
 fail=fopen(s10,'w');
 fprintf(fail, '%s\n', 'function y=mat_fun(X,Q,N);');
 fprintf(fail, '%s\n' ,'T_=X(:,1); X_I=X(:,2:size(X,2)); X_T=X_I(size(X_I,1),:);');
@@ -53,12 +53,12 @@ fprintf(fail,'%s\n', 'if N==0; y=J; else y=J(N); end;');
 fclose(fail);
 
 %--------------------------------------------------------------------------------
-% создание mat_int
+% СЃРѕР·РґР°РЅРёРµ mat_int
 %fail=fopen(s10,'a');
 %fprintf(fail, '%s\n','function X_=mat_int(Q,X0);');
 %fprintf(fail,'%s\n','global flag_nd;');
 %fprintf(fail,'%s\n','if flag_nd==0;');
-% хитрый ход, т.к. нальзя писать символ '. '=char(39)
+% С…РёС‚СЂС‹Р№ С…РѕРґ, С‚.Рє. РЅР°Р»СЊР·СЏ РїРёСЃР°С‚СЊ СЃРёРјРІРѕР» '. '=char(39)
 %sss1=strcat('global t0 T; eps=zeros(1,size(X0,2))+1e-4; X0=X0',char(39),';');
 %fprintf(fail,'%s\n', sss1);
 %sss2=strcat('options=odeset(',char(39),'RelTol',char(39),',1e-4,',char(39),'AbsTol',char(39),',eps,',char(39),'maxstep',char(39),',(T-t0)/100);');
@@ -80,7 +80,7 @@ fclose(fail);
 %fclose(fail);
 
 %-----------------------------------------------------------------------
-% создание mat_mod
+% СЃРѕР·РґР°РЅРёРµ mat_mod
 fail=fopen(s10,'a');
 fprintf(fail,'%s\n','function X_=mat_mod(dt,X,Q);');
 fprintf(fail,'%s\n','global flag_nd;');
@@ -110,14 +110,14 @@ fprintf(fail,'%s\n', sss3);
 fclose(fail);
 
 %--------------------------------------------------------------------------
-% создание mat_ogr
+% СЃРѕР·РґР°РЅРёРµ mat_ogr
 %fprintf(fail,'%s\n','u_=[];');
 %fprintf(fail,'v_=[];');
-% Ограничения типа неравенств: u_(t)<=0;
-% Например:
+% РћРіСЂР°РЅРёС‡РµРЅРёСЏ С‚РёРїР° РЅРµСЂР°РІРµРЅСЃС‚РІ: u_(t)<=0;
+% РќР°РїСЂРёРјРµСЂ:
 % u_(1)=Q(1)+Q(2)-1;
 % u_(2)=Q(3)+Q(4)-1;
-% Ограничения типа равенств: v_(t)=0;
+% РћРіСЂР°РЅРёС‡РµРЅРёСЏ С‚РёРїР° СЂР°РІРµРЅСЃС‚РІ: v_(t)=0;
 fail=fopen(s10,'a');
 fprintf(fail,'%s\n','function [u_,v_]=mat_ogr(Q,X,n);');
 
@@ -167,7 +167,7 @@ fprintf(fail,'%s\n', '%KQ');
 
 fclose(fail);
 %_______________
-% начальные значения
+% РЅР°С‡Р°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ
 fail=fopen(s10,'a');
 
 fprintf(fail,'%s\n', '%x0'); 
@@ -197,7 +197,7 @@ fclose(fail);
 
 
 %________________________________________________________________________
-% тип модели и колличество коалиций
+% С‚РёРї РјРѕРґРµР»Рё Рё РєРѕР»Р»РёС‡РµСЃС‚РІРѕ РєРѕР°Р»РёС†РёР№
 fail=fopen(s10,'a');
 
 val1=get(findobj(inpmodel, 'Tag', 'tagcoalic'),'value');
@@ -219,8 +219,8 @@ end
 fprintf(fail,'%s\n', '%KNC'); 
 fprintf(fail,'%s\n', '%FN'); 
 
-switch val2      % выбираем высвеченную строку
-case 1          % высвечена первая строка
+switch val2      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
 fprintf(fail,'%s\n', 'flag_nd=0;'); 
 %fprintf(fail,'%s\n', 'save data_flag_nd flag_nd;');
 %mr_q=get(findobj(inpmodel, 'Tag', 'modr_q'),'String');
@@ -251,7 +251,7 @@ fprintf(fail,'%s\n', '%KT');
 %______________
 
 
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 fprintf(fail,'%s\n', 'flag_nd=1;'); 
 fprintf(fail,'%s\n', '%KFN'); 
 %fprintf(fail,'%s\n', 'save data_flag_nd flag_nd;'); 
@@ -272,7 +272,7 @@ end
 fclose(fail);    
 %______________________________________________________________________
 
-% Размерности вектора параметров по каждой коалиции
+% Р Р°Р·РјРµСЂРЅРѕСЃС‚Рё РІРµРєС‚РѕСЂР° РїР°СЂР°РјРµС‚СЂРѕРІ РїРѕ РєР°Р¶РґРѕР№ РєРѕР°Р»РёС†РёРё
 fail=fopen(s10,'a');
 
 fprintf(fail,'%s\n', '%rq'); 
@@ -286,7 +286,7 @@ fprintf(fail,'%s\n', '%Krq');
 
 fclose(fail);
 %______________
-% Число сетевых точек
+% Р§РёСЃР»Рѕ СЃРµС‚РµРІС‹С… С‚РѕС‡РµРє
 fail=fopen(s10,'a');
 
 fprintf(fail,'%s\n', '%rs'); 

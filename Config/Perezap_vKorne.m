@@ -32,19 +32,19 @@ delete data_uku_k.mat
 
 
 
-% открываю начальные значения x0
+% РѕС‚РєСЂС‹РІР°СЋ РЅР°С‡Р°Р»СЊРЅС‹Рµ Р·РЅР°С‡РµРЅРёСЏ x0
 
 mX0=get(findobj(inpmodel, 'Tag', 'modx0'),'String');
 eval(mX0)
 save data_x0 x0;
 
-% открываю r_q
+% РѕС‚РєСЂС‹РІР°СЋ r_q
 
 mRQ=get(findobj(inpmodel, 'Tag', 'modr_q'),'String');
 eval(mRQ)
 save data_r_q r_q;
 
-% открываю t0 и T
+% РѕС‚РєСЂС‹РІР°СЋ t0 Рё T
 
 mt0=get(findobj(inpmodel, 'Tag', 't0int'),'String');
 mT=get(findobj(inpmodel, 'Tag', 'Tint'),'String');
@@ -52,37 +52,37 @@ eval(mt0)
 eval(mT)
 save data_Tint t0 T;
 
-% открываю Nt`
+% РѕС‚РєСЂС‹РІР°СЋ Nt`
 
 NT=get(findobj(inpmodel, 'Tag', 'nTakt'),'String');
 eval(NT)
 save data_Nt Nt;
 
-% открываю r_set
+% РѕС‚РєСЂС‹РІР°СЋ r_set
 
 mRS=get(findobj(inpmodel, 'Tag', 'modr_set'),'String');
 eval(mRS)
 save data_r_set r_set;
 
-% открываю число коалиций
+% РѕС‚РєСЂС‹РІР°СЋ С‡РёСЃР»Рѕ РєРѕР°Р»РёС†РёР№
 val=get(findobj(inpmodel, 'Tag', 'tagcoalic'),'value');
-switch val      % выбираем высвеченную строку
-case 1          % высвечена первая строка
+switch val      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
 num_coalic=2;
 save data_num_coalic num_coalic;
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 num_coalic=3;
 save data_num_coalic num_coalic;
 otherwise
 end
 
-% открываю тип модели
+% РѕС‚РєСЂС‹РІР°СЋ С‚РёРї РјРѕРґРµР»Рё
 val=get(findobj(inpmodel, 'Tag', 'flagndnum'),'value');
-switch val      % выбираем высвеченную строку
-case 1          % высвечена первая строка
+switch val      % РІС‹Р±РёСЂР°РµРј РІС‹СЃРІРµС‡РµРЅРЅСѓСЋ СЃС‚СЂРѕРєСѓ
+case 1          % РІС‹СЃРІРµС‡РµРЅР° РїРµСЂРІР°СЏ СЃС‚СЂРѕРєР°
 flag_nd=0;  
 save data_flag_nd flag_nd;
-case 2          % высвечена вторая строка
+case 2          % РІС‹СЃРІРµС‡РµРЅР° РІС‚РѕСЂР°СЏ СЃС‚СЂРѕРєР°
 flag_nd=1;  
 save data_flag_nd flag_nd;
 otherwise
@@ -94,7 +94,7 @@ eval(mRS)
 save data_r_set r_set;
 
 
-% открываю мин и макс параметров q
+% РѕС‚РєСЂС‹РІР°СЋ РјРёРЅ Рё РјР°РєСЃ РїР°СЂР°РјРµС‚СЂРѕРІ q
 
 mQ=get(findobj(inpmodel, 'Tag', 'modQ'),'String');
 eval(mQ);
@@ -102,25 +102,25 @@ mQ1=get(findobj(inpmodel, 'Tag', 'modQ1'),'String');
 eval(mQ1);
 save data_qmm q_max q_min;
 
-% Делаю активными позиции меню
+% Р”РµР»Р°СЋ Р°РєС‚РёРІРЅС‹РјРё РїРѕР·РёС†РёРё РјРµРЅСЋ
 set(findobj(mmenu, 'Tag', 'namemodelvmenu'),'String',name);
 set(findobj(mmenu, 'Tag', 'mmodelir') , 'Enable', 'on');
 set(findobj(mmenu, 'Tag', 'moptimiz') , 'Enable', 'on');
 
-% записываю в файл состояния имя примененной модели
+% Р·Р°РїРёСЃС‹РІР°СЋ РІ С„Р°Р№Р» СЃРѕСЃС‚РѕСЏРЅРёСЏ РёРјСЏ РїСЂРёРјРµРЅРµРЅРЅРѕР№ РјРѕРґРµР»Рё
 fail=fopen('startcong.txt','w');
 fprintf(fail, '%s\n', name);
 fclose(fail);
 
-% Поиск пути к момдису
+% РџРѕРёСЃРє РїСѓС‚Рё Рє РјРѕРјРґРёСЃСѓ
 k=which('momdis.m');
 k=strrep(k,'momdis.m','');
 s=strcat(k,'Models');
 
-%создание стороки с именем модели
+%СЃРѕР·РґР°РЅРёРµ СЃС‚РѕСЂРѕРєРё СЃ РёРјРµРЅРµРј РјРѕРґРµР»Рё
 s10=strcat(s,'\',name,'.m');
 
-%создание сторок с именем файлов модели в корне
+%СЃРѕР·РґР°РЅРёРµ СЃС‚РѕСЂРѕРє СЃ РёРјРµРЅРµРј С„Р°Р№Р»РѕРІ РјРѕРґРµР»Рё РІ РєРѕСЂРЅРµ
 k1=strcat(k,'mat_fun.m');
 %k2=strcat(k,'mat_int.m');
 k3=strcat(k,'mat_mod.m');
@@ -131,7 +131,7 @@ k4=strcat(k,'mat_ogr.m');
 
 fail=fopen(s10,'r');
 
-% создание mat_fun в корне
+% СЃРѕР·РґР°РЅРёРµ mat_fun РІ РєРѕСЂРЅРµ
 failZ=fopen(k1,'w');
 A=fgets(fail);
 fprintf(failZ, A);
@@ -145,7 +145,7 @@ end
 fclose(failZ);
 
 
-% создание mat_mod в корне
+% СЃРѕР·РґР°РЅРёРµ mat_mod РІ РєРѕСЂРЅРµ
 failZ=fopen(k3,'w');
 fprintf(failZ, A);
 while 1
@@ -157,7 +157,7 @@ fprintf(failZ, A);
 end
 fclose(failZ);
 
-% создание mat_ogr в корне
+% СЃРѕР·РґР°РЅРёРµ mat_ogr РІ РєРѕСЂРЅРµ
 failZ=fopen(k4,'w');
 fprintf(failZ, A);
 while 1
@@ -176,9 +176,9 @@ fclose(fail);
 
 
 
-%запись в файл состояния размерностей
+%Р·Р°РїРёСЃСЊ РІ С„Р°Р№Р» СЃРѕСЃС‚РѕСЏРЅРёСЏ СЂР°Р·РјРµСЂРЅРѕСЃС‚РµР№
 
-%показатели
+%РїРѕРєР°Р·Р°С‚РµР»Рё
 fail=fopen(s10,'r');
 raz=0;
 while 1
@@ -201,7 +201,7 @@ failR=fopen('startcong.txt','a');
 fprintf(failR, '%s\n', razs);
 fclose(failR);
 
-%состояние
+%СЃРѕСЃС‚РѕСЏРЅРёРµ
 fail2=fopen(s10,'r');
 raz=0;
 while 1
@@ -227,7 +227,7 @@ failR=fopen('startcong.txt','a');
 fprintf(failR, '%s\n', razs);
 fclose(failR);
 
-%показатели
+%РїРѕРєР°Р·Р°С‚РµР»Рё
 fail3=fopen(s10,'r');
 raz=0;
 while 1

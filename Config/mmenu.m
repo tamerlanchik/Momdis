@@ -377,14 +377,14 @@ function roblpokm_Callback(hObject, eventdata, handles)
 
 % --------------------------------------------------------------------
 function W_1_Callback(hObject, eventdata, handles)
-% hObject    handle to Без_названия_1 (see GCBO)
+% hObject    handle to Р‘РµР·_РЅР°Р·РІР°РЅРёСЏ_1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
 
 % --------------------------------------------------------------------
 function E_2_Callback(hObject, eventdata, handles)
-% hObject    handle to Без_названия_2 (see GCBO)
+% hObject    handle to Р‘РµР·_РЅР°Р·РІР°РЅРёСЏ_2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 

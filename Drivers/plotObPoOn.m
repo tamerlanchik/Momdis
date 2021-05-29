@@ -1,17 +1,17 @@
 function plotObPoOn
 
-'отрисовка области показателей'
+'РѕС‚СЂРёСЃРѕРІРєР° РѕР±Р»Р°СЃС‚Рё РїРѕРєР°Р·Р°С‚РµР»РµР№'
 
 load data_num_coalic;
 
 if num_coalic==2;
-% 2 коалиции
+% 2 РєРѕР°Р»РёС†РёРё
 load data_field;
 plot(DataM.J(:,:,1),DataM.J(:,:,2),'b.'); hold on;
 end;
 
 if num_coalic==3;
-% 3 коалиции
+% 3 РєРѕР°Р»РёС†РёРё
 load data_field;
 plot3(DataM.J(:,:,1,1),DataM.J(:,:,1,2),DataM.J(:,:,1,3),'b.'); hold on;
 %plot3(Data0.J(:,1),Data0.J(:,2),Data0.J(:,3),'b.'); hold on;
