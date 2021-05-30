@@ -129,13 +129,13 @@ v_=[];
 %KU
 function KonFail
 %Q
-q_max=[0.5,0.5];
+q_max=[0.6,0.6];
 %KQ
 %x0
 x0 = [0.1 0.1 0.1 0.1 0.1 0.1];
 %Kx0
 %Q1
-q_min=[0.01,0.001];
+q_min=[0.001,0.001];
 %KQ1
 %NC
 num_coalic=2;
@@ -150,5 +150,5 @@ Nt=4;
 r_q=[1,1];
 %Krq
 %rs
-r_set=[10,10];
+r_set=[20,20];
 %Krs
