@@ -17,11 +17,11 @@ if flag_nd==1; % Дискретная модель с потактовым вы�
   %   X1=xx;
   %   X_=[X_;i,xx];
   % end;
-  eps = zeros(1, size(x0, 2)) + 0.5;
+  eps = zeros(1, size(x0, 2)) + 0.1;
   T = 6;
   t0 = 0;
-  options = odeset('RelTol', 0.5, 'AbsTol', eps, 'maxstep', (T - t0) / 30);
+  options = odeset('RelTol', 0.1, 'AbsTol', eps, 'maxstep', (T - t0) / 30);
   [tt, xx] = ode45(@mat_mod, [t0 T], x0, options, Q);
   X_ = [tt, xx];
-  Q
+  Q;
 end;
